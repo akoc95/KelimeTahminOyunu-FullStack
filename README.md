@@ -7,10 +7,9 @@ Eğer projeyi yayınlayacak iseniz satın aldığınız Hosting firmasından SMT
 ReportController içerisinde 
 "private async Task SendEmailAsync(string emailAddress, string subject, string body)" methodunu bulup kendi SMTP ayarlarınız ile değiştirin.
 
-Views/Admin/Index içerisinde
-<a class="text-decoration-none text-secondary" href="" target="_blank">Web mail'e yönlendir.</a>
-İlgili URL'yi kendi site adınıza göre değiştirin.
+Views/Admin/Index içerisinde 34.satırdaki href kısmını kendi site URL' niz ile değiştirin.
 
+# Kategoriler
 Bitki, Canlı, Meyve, Sebze, Şehir, Ülke kategolerinde resim eklenmesi gerekmekte.
 Ayrıca Şehir kategorisinde ilgili resmin tanıtım metni de olması gerekmekte.
 Migration yaparken bu kolonlar zaten otomatik olarak eklenecek.
