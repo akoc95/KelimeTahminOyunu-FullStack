@@ -1,4 +1,4 @@
-# KeywordleFinal
+# Database İşlemleri
 
 appsettings.json içerisinde Default kısmına Bağlantı bilgilerinizi yazarak kaydedin.
 Migration yaparak database tablolarını oluşturduktan sonra veri ekleme işlemlerine başlayabilirsiniz.
