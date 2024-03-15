@@ -1,0 +1,28 @@
+﻿@model Report
+<head>
+    <title>Kelimegrafi.com - Sorun Bildir</title>
+    <meta name="description" content="Bizimle iletişime geçin! Sorularınızı, geri bildirimlerinizi veya işbirliği taleplerinizi iletmek için iletişim formunu kullanın. Size en kısa sürede geri dönüş yapmaktan mutluluk duyarız.">
+    <meta name="keywords" content="iletişim formu, iletişim bilgileri, geri bildirim, işbirliği, iletişim, sorular, geri dönüş, iletişim kanalları">
+
+</head>
+<body>
+    <div class="container justify-content-center d-flex mx-auto mt-5" id="contribute">
+        <form method="post" class="col-sm-12 col-md-10 col-lg-7 col-xl-5 COL-xxl-6 col-12 mx-1">
+            <div class="card bg-dark d-flex text-white">
+                <div class="card-header fs-3 text-info">Sorun Bildirme Formu</div>
+                <div class="card-body">
+                    <label class="form-label mb-3 fs-5" for="Title">Başlık</label>
+                    <input class="form-control mb-3 fs-5" asp-for="Title" maxlength="45" autocomplete="off" placeholder="Başlık giriniz." required>
+                    <label class="form-label mb-3 fs-5" for="Description">Açıklama</label>
+                    <textarea class="form-control mb-3 fs-5" asp-for="Description" placeholder="Açıklamanızı giriniz. En fazla 150 karakter." required autocomplete="off" maxlength="150" style="height: 100px;"></textarea>
+                    <label class="form-label mb-3 fs-5" for="Email">E-posta</label>
+                    <input type="email" class="form-control mb-3 fs-5" asp-for="Email" maxlength="45" required autocomplete="off">
+                </div>
+                <div class="card-footer text-muted d-flex">
+                    <button type="submit" class="form-control btn btn-primary mb-1 mx-1 p-2 fs-5" id="btnSubmit">Gönder</button>
+                    <button type="reset" class="form-control btn btn-danger mb-1 mx-1 fs-5">Temizle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

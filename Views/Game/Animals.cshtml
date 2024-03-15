@@ -1,0 +1,28 @@
+﻿<head>
+    <title>Kelimegrafi.com - Hayvanlar</title>
+    <meta name="description" content="Çocuklar için özel olarak tasarlanmış kelime bulmaca oyunuyla eğlenceli bir maceraya hazır olun! Hayvanlar, böcekler, balıklar, kuşlar ve daha fazlasıyla dolu bulmacaları çözerken çocuklarınızın zekasını geliştirin.">
+    <meta name="keywords" content="kelime bulmaca, çocuklar için oyunlar, eğlenceli oyunlar, hayvanlar, böcekler, balıklar, kuşlar, çocuk eğitimi, zeka geliştirme, eğitici oyunlar, kelime oyunu">
+</head>
+<body>
+    <div class="card bg-dark m-auto justify-content-center border-0">
+        <div class="card-header text-center ">
+            <h2 class="question">Aşağıdaki canlının adı nedir?</h2>
+        </div>
+        <div class="card-body text-center">
+            <h2 id="timer" class="forTimer mb-3" style="display:none;"><i class="fas fa-hourglass"></i></h2>
+            <div class="imagePath"></div>
+            <div id="msg-text"></div>
+            <a class="btn btn-lg btn-primary mt-4" id="btnStart" onclick="startAnimalGame()">Oyunu Başlat</a>
+            <div class="description text-white mt-5">
+                <p>Çocuklar için özel olarak tasarlanmış kelime bulmaca oyunuyla eğlenceli bir maceraya hazır olun!</p>
+                <p>Hayvanlar, böcekler, balıklar, kuşlar ve daha fazlasıyla dolu bulmacaları çözerken çocuklarınızın zekasını geliştirin.</p>
+            </div>
+            <div class="space"></div>
+            <div id="score"></div>
+            <input type"button" id="restart" class="btn btn-primary d-none mt-2" onclick="startAnimalGame()" value=" Yeniden başla" />
+        </div>
+    </div>
+    @section scripts {
+        <script src="~/js/game.js"></script>
+    }
+</body>

@@ -1,0 +1,40 @@
+﻿<head>
+    <title>Kelimegrafi.com - Geri Bildirim</title>
+    <meta name="description" content="Bizimle iletişime geçin! Sorularınızı, geri bildirimlerinizi veya işbirliği taleplerinizi iletmek için iletişim formunu kullanın. Size en kısa sürede geri dönüş yapmaktan mutluluk duyarız.">
+    <meta name="keywords" content="iletişim formu, iletişim bilgileri, geri bildirim, işbirliği, iletişim, sorular, geri dönüş, iletişim kanalları">
+
+</head>
+
+@if (TempData["success"] != null)
+{
+
+    <div class="card col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 m-auto mt-5 alert alert-info">
+        <div class="card-header fs-3">
+            Geri Bildiriminiz İçin Teşekkür Ederiz
+        </div>
+        <div class="card-body fs-5">
+            <p>
+                Sayın Ziyaretçimiz,
+
+                Geri bildiriminiz için teşekkür ederiz. Mesajınızı aldık ve en kısa sürede incelenerek size dönüş yapacağız.
+
+                Önceki iletişiminizde belirttiğiniz konulara odaklanarak, size en iyi hizmeti sunabilmek için çaba göstereceğiz. Anlayışınız ve sabrınız için teşekkür eder, size en kısa zamanda yanıt vermeyi taahhüt ederiz.<br /><br />
+
+                İlginiz ve desteğiniz için tekrar teşekkür ederiz.
+
+                Saygılarımla,
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Anasayfa'ya dön</a>
+        </div>
+        <div class="card-footer text-primary fs-5">
+            <a class="text-decoration-none" href="https://www.kelimegrafi.com">Kelimegrafi.com</a> Ekibi
+
+        </div>
+    </div>
+
+}
+
+
+
+
+

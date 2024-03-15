@@ -1,0 +1,103 @@
+﻿@model Contribution
+<head>
+    <title>Kelimegrafi.com - Kelime Öner</title>
+    <meta name="description" content="Kullanıcılarımızın katkılarıyla kelimeleri keşfedin! Kelime öneri sayfamızı kullanarak yeni kelimeler önerin ve genişleyen kelime haznemize katkıda bulunun. Sizden gelen önerilerle oyun deneyimimizi daha da zenginleştirmek için sabırsızlanıyoruz!">
+    <meta name="keywords" content="kelime öneri, kelime katkısı, kelime öneri sayfası, kullanıcı katkısı, kelime geliştirme, kelime haznesi, kelime keşfi">
+</head>
+<body>
+    <div class="container d-flex mx-auto mt-3" id="contribute">
+        <div class="card bg-dark col-5 mx-1 border-0">
+            <div class="card-header">
+                <h2 class="text-center text-info fs-3">Kelime Öneri Sayfasına Hoş Geldiniz!</h2>
+            </div>
+            <div class="card-body text-white fs-5">
+                <p class="card-text">Merhaba sevgili ziyaretçiler, bu interaktif platformda kelimelerle dolu bir dünyaya hoş geldiniz! Sözcük dağarcığınızı genişletmek, eğlenceli bir kelime bulmacasıyla vakit geçirmek ve hayal gücünüzü konuşturmak için doğru yerdesiniz.</p>
+
+                <h3 class="card-title text-info fs-4">Nasıl Katılabilirsiniz?</h3>
+                <ul class="list-group ">
+                    <li class="list-group-item fs-5 bg-dark text-white">Farklı kategorilerde kelime önerilerinizi paylaşın.</li>
+                    <li class="list-group-item bg-dark text-white">4 harfli, 5 harfli kelimelerden hayvanlara, meyvelere ve sebzelere kadar geniş bir yelpazede kategorilerden seçim yapın.</li>
+                </ul>
+                <h3 class="card-title text-info mt-3">Neden Katılmalısınız?</h3>
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark text-white">Eğlenceli Zaman Geçirme: Zihinsel aktivitenizi artırın ve eğlenceli bir kelime bulmacası çözme deneyimi yaşayın.</li>
+                    <li class="list-group-item bg-dark text-white">Hayal Gücünüzü Konuşturun: Farklı kategorilerde kendinize özgü kelime önerileri yaparak yaratıcılığınızı geliştirin.</li>
+                    <li class="list-group-item bg-dark text-white">Topluluk İle Etkileşim: Diğer ziyaretçilerle etkileşimde bulunun, önerilere yorum yapın ve birbirinize ilham verin.</li>
+                </ul>
+                <h3 class="card-title text-info mt-3">Nasıl Katkıda Bulunabilirsiniz?</h3>
+                <ol class="list-group">
+                    <li class="list-group-item bg-dark text-white">Kelime Öner sayfasına gidin.</li>
+                    <li class="list-group-item bg-dark text-white">Kelime kutucuğuna önerinizi yazıp, kategori seçimi yapın.</li>
+                    <li class="list-group-item bg-dark text-white">Gönder butonuna tıklayın.</li>
+                </ol>
+            </div>
+            <div class="card-footer text-muted">
+                <p class="text-center fs-6">Bu sayfa, kelimelerle dolu bir dünyada keyifli bir yolculuğa çıkmak için tasarlandı. Hadi, hayal gücünüzü konuşturun ve bu kelime macerasına katılın!</p>
+            </div>
+        </div>
+        <form method="post" class="col-sm-7 col-md-7 col-lg-6 col-xl-5 col-7 mx-1">
+            <div class="card bg-dark d-flex text-white border-0">
+                <div class="card-header fs-3 text-info">Yeni Kelime Öner</div>
+                <div class="card-body">
+                    <label class="form-label mb-3 fs-5" for="category">Kategori Seçimi Yapınız</label>
+                    <select class="form-select fs-5" asp-for="Category" required onchange="checkKeywordLength();Clear()">
+                        <option value="Hayvan">Canlılar</option>
+                        <option value="Meyve">Meyveler</option>
+                        <option value="Sebze">Sebzeler</option>
+                        <option value="4 Harf">4 Harf</option>
+                        <option value="5 Harf">5 Harf</option>
+                        <option value="6 Harf">6 Harf</option>
+                    </select>
+                    <label class="form-label mb-3 fs-5" for="newKeyword">Kelime</label>
+                    <input class="form-control mb-3 fs-5" asp-for="Word" autocomplete="off" placeholder="Lütfen kelime giriniz."
+                           oninput="checkKeywordLength()" id="keywordInput" pattern="[a-zA-ZğüşıöçĞÜŞİÖÇ]+" title="Sadece harf kabul edilir" required>
+                </div>
+                <div class="card-footer text-muted d-flex">
+                    <button type="submit" class="form-control btn btn-primary mb-1 mx-1 p-2 fs-5" id="btnSubmit">Gönder</button>
+                    <button type="reset" class="form-control btn btn-danger mb-1 mx-1 fs-5">Temizle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+
+        function checkKeywordLength() {
+
+            let category = document.getElementById("Category").value;
+            let keywordInput = document.getElementById("keywordInput");
+
+            if (category === "4 Harf") {
+
+                keywordInput.minLength = 4;
+                keywordInput.maxLength = 4;
+            }
+
+            else {
+                keywordInput.maxLength = 15;
+            }
+
+            if (category === "5 Harf") {
+                keywordInput.minLength = 5;
+                keywordInput.maxLength = 5;
+            }
+
+            else if (category == "6 Harf") {
+                keywordInput.minLength = 6;
+                keywordInput.maxLength = 6;
+            }
+
+
+
+        }
+
+        function Clear() {
+            let keywordInput = document.getElementById("keywordInput").value = "";
+
+        }
+    </script>
+
+
+
+</body>

@@ -1,0 +1,66 @@
+﻿@model User
+<head>
+    <title>Giriş Yap - Kelimegrafi.com</title>
+</head>
+
+<div class="container">
+    <form class="loginForm" id="loginForm">
+        <div class="card loginCard mt-5 col-xl-5 border-0 text-white m-auto" style="background:#181a1c;">
+            <div class="card-header fs-3 p-3">          
+                <i class="fas fa-sign-in-alt"></i> Giriş Yap
+            </div>
+            <div class="card-body">
+                <label class="form-label fs-5">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <input type="text" asp-for="Username" class="form-control p-2" id="Username" required autocomplete="off" />
+                <label class="form-label fs-5 mt-2">
+                    <i class="fas fa-lock"></i> Şifre
+                </label>
+                <input class="form-control p-2" type="password" asp-for="Password" id="Password" required />
+                <div class="form-group mt-2">
+                    <input type="checkbox" class="form-check-input fs-6" id="rememberMe" name="rememberMe" />
+                    <label class="form-check-label fs-6" for="rememberMe">Beni Hatırla</label>
+
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <button class="btn btn-primary btn-lg float-end fs-5" type="submit">Giriş Yap</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts {
+
+
+    <script>
+
+        $(document).ready(function () {
+            var usernameInput = $('#Username');
+            var passwordInput = $('#Password');
+            var rememberMeCheckbox = $('#rememberMe');
+
+            // Sayfa yüklendiğinde çerezleri kontrol et
+            if (localStorage.getItem('rememberedUsername') && localStorage.getItem('rememberedPassword')) {
+                usernameInput.val(localStorage.getItem('rememberedUsername'));
+                passwordInput.val(localStorage.getItem('rememberedPassword'));
+                rememberMeCheckbox.prop('checked', true);
+            }
+
+            // Form gönderildiğinde
+            $('#loginForm').submit(function (event) {
+                if (rememberMeCheckbox.is(':checked')) {
+                    // Kullanıcı 'Beni Hatırla' seçeneğini işaretlediyse, bilgileri çerezlere kaydet
+                    localStorage.setItem('rememberedUsername', usernameInput.val());
+                    localStorage.setItem('rememberedPassword', passwordInput.val());
+                } else {
+                    // Kullanıcı seçimi iptal ettiyse, çerezleri temizle
+                    localStorage.removeItem('rememberedUsername');
+                    localStorage.removeItem('rememberedPassword');
+
+                }
+            });
+        });
+    </script>
+}

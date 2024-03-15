@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<Contribution>
+
+
+<table class="table table-bordered table-striped table-dark tableCustom">
+    <thead>
+        <tr>
+            <th>Kelime</th>
+            <th>Kategori</th>
+            <th>Tarih</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Word</td>
+                <td>@item.Category</td>
+                <td>@item.DateCreated</td>
+                <td><a class="btn btn-danger text-black fw-bold" onclick="confirmDeleteCon('@item.Id')">Sil</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

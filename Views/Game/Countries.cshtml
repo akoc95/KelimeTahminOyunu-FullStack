@@ -1,0 +1,32 @@
+﻿<head>
+    <title>Kelimegrafi.com - Ülkeler</title>
+    <meta name="description" content="Dünya ülkelerinin bayraklarını tahmin etme heyecanına katılın! Bu eğlenceli kelime oyununda farklı ülkelerin bayraklarını tanıyın ve doğru cevapları bulun. Kültürel zenginlikleri keşfederken eğlenin!">
+    <meta name="keywords" content="bayrak tahmini, ülke bayrakları, kelime oyunu, kültür, eğlence, öğrenme, ülkeler, bayraklar, tahmin oyunu">
+
+</head>
+<body>
+
+    <div class="card bg-dark m-auto justify-content-center border-0">
+        <div class="card-header text-center ">
+            <h2 class="question">Aşağıdaki bayrak, hangi ülkeye aittir?</h2>
+        </div>
+        <div class="card-body text-center">
+            <h2 id="timer" class="forTimer mb-3" style="display:none;"><i class="fas fa-hourglass"></i></h2>
+            <div class="imagePath"></div>
+            <div id="msg-text"></div>
+            <a class="btn btn-lg btn-primary mt-4" id="btnStart" onclick="startCountryGame()">Oyunu Başlat</a>
+            <div class="description text-white mt-5">
+                <p>Dünya ülkelerinin bayraklarını tahmin etme heyecanına katılın!</p>
+                <p>Bu eğlenceli kelime oyununda farklı ülkelerin bayraklarını tanıyın ve doğru cevapları bulun. Kültürel zenginlikleri keşfederken eğlenin!</p>
+            </div>
+            <div class="space"></div>
+            <div id="score"></div>
+            <input type"button" id="restart" class="btn btn-primary d-none mt-2" onclick="startCountryGame()" value=" Yeniden başla" />
+        </div>
+    </div>
+
+    @section scripts {
+        <script src="~/js/game.js"></script>
+    }
+
+</body>

@@ -1,0 +1,67 @@
+﻿<head>
+    <title>Kelimegrafi.com - Geri Bildirim</title>
+    <meta name="description" content="Kullanıcılarımızın katkılarıyla kelimeleri keşfedin! Kelime öneri sayfamızı kullanarak yeni kelimeler önerin ve genişleyen kelime haznemize katkıda bulunun. Sizden gelen önerilerle oyun deneyimimizi daha da zenginleştirmek için sabırsızlanıyoruz!">
+    <meta name="keywords" content="kelime öneri, kelime katkısı, kelime öneri sayfası, kullanıcı katkısı, kelime geliştirme, kelime haznesi, kelime keşfi">
+
+</head>
+
+@if (TempData["success"] != null)
+{
+
+    <div class="card col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 m-auto mt-5 alert alert-info">
+        <div class="card-header fs-3">
+            Teşekkür Notu
+        </div>
+        <div class="card-body fs-5">
+            <p>
+                Sevgili Ziyaretçilerimiz,
+
+                Sitemizin kelime önerisi özelliğini kullanarak, içeriğimizi zenginleştirmemize ve size daha iyi hizmet verebilmemize katkı sağlayan herkese teşekkür ederiz. Sizlerin önerileri, websitemizin gelişimine değerli katkılar sunuyor.
+
+                Değerli fikirleriniz ve önerileriniz için minnettarız. <br /><br />
+
+                Saygılarımızla
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Anasayfa'ya dön</a>
+        </div>
+        <div class="card-footer text-primary fs-5">
+            <a class="text-decoration-none" href="https://www.kelimegrafi.com">Kelimegrafi.com</a> Ekibi
+        </div>
+    </div>
+}
+
+
+@if (TempData["error"] != null)
+{
+
+
+    <div class="card  alert alert-danger">
+        <div class="card-header fs-3">
+            Hata Mesajı
+        </div>
+        <div class="card-body fs-5">
+            <p>
+                Sayın Ziyaretçimiz,
+
+                Önerdiğiniz kelimenin eklenme sürecinde bir hata oluştu, bu nedenle öneriniz kabul edilemedi. Özür dileriz ve anlayışınız için teşekkür ederiz.
+
+                Belki de daha açıklayıcı bir tanım veya benzer kelimelerle ilgili başka önerilerde bulunabilirsiniz. Katkılarınızı değerlendirmeye devam ediyoruz ve sizinle birlikte websitemizi geliştirmek istiyoruz.
+
+                Teşekkür eder, anlayışınız için minnettarız.
+
+                Saygılarımla,
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Anasayfa'ya dön</a>
+
+        </div>
+        <div class="card-footer text-primary fs-5">
+            <a class="text-decoration-none" href="https://www.kelimegrafi.com">Kelimegrafi.com</a> Ekibi
+
+        </div>
+    </div>
+
+}
+
+
+
+

@@ -1,0 +1,29 @@
+﻿<head>
+    <title>Kelimegrafi.com - 4 Harf</title>
+    <meta name="description" content="Dört harfli kelime tahmin etme oyununda becerilerinizi test edin! Bu eğlenceli oyunla kelimeleri bulmaya çalışın ve zekanızı geliştirin. Arkadaşlarınızla rekabet edin veya kendi başınıza oynayın!">
+    <meta name="keywords" content="4 harfli kelime, kelime tahmini, zeka oyunu, eğlence, arkadaşlarla oyun, tahmin oyunu, beyin jimnastiği">
+
+</head>
+<body>
+    <div class="card bg-dark m-auto justify-content-center border-0">
+        <div class="card-header text-center ">
+            <h2 class="question">Aşağıdaki 4 Harfli kelimeyi tahmin et.</h2>
+        </div>
+        <div class="card-body text-center">
+            <h2 id="timer" class="forTimer mb-3" style="display:none;"><i class="fas fa-hourglass"></i></h2>
+            <div id="msg-text" class="mb-2"></div>
+            <a class="btn btn-lg btn-primary mt-4" id="btnStart" onclick="startFourLetterGame()">Oyunu Başlat</a>
+            <div class="description text-white mt-5">
+                <p>Dört harfli kelime tahmin etme oyununda becerilerinizi test edin!</p>
+                <p>Bu eğlenceli oyunla kelimeleri bulmaya çalışın ve zekanızı geliştirin. Arkadaşlarınızla rekabet edin veya kendi başınıza oynayın!</p>
+            </div>
+            <div class="space"></div>
+            <div id="score"></div>
+            <input type"button" id="restart" class="btn btn-primary d-none mt-2" onclick="startFourLetterGame()" value=" Yeniden başla" />
+        </div>
+    </div>
+    @section scripts {
+        <script src="~/js/game.js"></script>
+    }
+
+</body>

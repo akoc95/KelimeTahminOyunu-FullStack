@@ -1,0 +1,119 @@
+﻿<head>
+    <title>Kelimegrafi.com - Anasayfa</title>
+    <meta name="description" content="Kelimelerle dolu dünyaya hoş geldiniz! Kelime bulmaca oyunlarından ülke bayrağı tahminine, 4 harfli kelime bulma oyunundan turistik yerlere göre şehir tahminine kadar geniş bir yelpazede eğlenceli oyunlar burada! Beyin jimnastiği yaparken bilgi kazanın ve arkadaşlarınızla rekabet edin.">
+    <meta name="keywords" content="kelime oyunları, bulmaca oyunları, kelime tahmini, ülke bayrakları, 4 harfli kelime, turistik yerler, şehir tahmini, eğlence, bilgi, beyin jimnastiği, arkadaşlarla rekabet">
+</head>
+<body>
+    <div class="container">
+        <div class="card bg-dark border-0">
+            <div class="card-header">
+                <div class="text selectText">
+                    <h1>Oyuna başlamak için seçim yapınız.</h1>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="btnCategory">
+                    <a class="btn btn-primary mx-1" asp-area="" asp-controller="Game" asp-action="FourLetters">4 Harf</a>
+                    <a class="btn mx-1" style="background:#2654a7" asp-area="" asp-controller="Game" asp-action="FiveLetter">5 Harf</a>
+                    <a class="btn btn-success mx-1" asp-area="" asp-controller="Game" asp-action="Animals">Canlılar</a>
+                    <a class="btn btn-danger mx-1" asp-area="" asp-controller="Game" asp-action="Fruits">Meyve</a>
+                    <a class="btn mx-1" style="background: #057a87" asp-area="" asp-controller="Game" asp-action="Vegetables">Sebze</a>
+                    <a class="btn btn-secondary mx-1" asp-area="" asp-controller="Game" asp-action="Cities">Şehir</a>
+                    <a class="btn mx-1" style="background: #ff6c00" asp-area="" asp-controller="Game" asp-action="Countries">Ülke</a>
+                </div>
+            </div>
+            <div class="card-footer text-white fs-5">
+                <div class="text selectText">
+                    <h1>Kelimegrafi.com Tanıtım<a id="publicity"></a></h1>
+                </div>
+                <div class="publicity">
+                    <p>Hoş Geldiniz! Kelime Grafi - Kelimelerle Eğlenceli Bir Yolculuk!</p>
+
+                    <p>Merhaba sevgili ziyaretçiler,</p>
+
+                    <p>Kelimegrafi.com, kelimelerle dolu eğlenceli bir dünyada keyifli bir yolculuğa çıkmak için tasarlanmış interaktif bir platformdur. Hem zihinsel becerilerinizi geliştirin hem de eğlenceli vakit geçirin!</p>
+
+                    <h2>Neler Sunuyoruz?</h2>
+
+                    <p>Çeşitli Kategoriler: Kendinizi farklı kategorilerde test edin! 4 harfli, 5 harfli, meyveler, hayvanlar, sebzeler, şehirler ve ülke bayrakları gibi çeşitli kategorilerde kelimelerle karşılaşacaksınız.</p>
+
+                    <p>Görsel Zenginlik: Meyveler, hayvanlar ve sebzeler kategorilerindeki kelimeler fotoğraflarla desteklenmiştir, böylece öğrenirken görsel hafızanızı da kullanabilirsiniz. Özellikle çocuklar için harika bir öğrenme deneyimi sunuyoruz!</p>
+
+                    <p>
+                        Rastgele Kelimeler: Her seferinde farklı kelimelerle karşılaşacak, kelime bilginizi sınamak için sürekli bir meydan okuma bulacaksınız.
+                    </p>
+
+                    <p>
+                        Eğlenceli ve Eğitici: Kelime Grafi, eğlenceli bir oyun atmosferi içinde, aynı zamanda öğrenme ve kelime dağarcığınızı genişletme amacı güden bir platformdur.
+                    </p>
+                    <h2>Nasıl Katılabilirsiniz?</h2>
+                    <p>
+                        Kategori Seçimi: Ana sayfa üzerinden istediğiniz kategoriyi seçin.
+                    </p>
+                    <p>
+                        Kelime Tahmini: Rastgele gelen kelimenin ne olduğunu tahmin edin.
+                    </p>
+                    <p>
+                        Doğru Cevap: Doğru tahminlerle puan kazanın ve kendinizi geliştirin.
+                    </p>
+                    <p>
+                        Bu sayfa, her yaştan ziyaretçiye hitap eden bir kelime macerası sunuyor. Hem eğlenceli vakit geçirmek hem de kelime bilginizi test etmek için hemen Kelime Grafi'yi keşfedin!
+                    </p>
+                    <p>
+                        Sevgiler, <br />
+                        <strong>Kelimegrafi.com</strong> Ekibi
+                    </p>
+                </div>
+                <div class="text selectText">
+                    <h1>Nasıl oynanır?<a id="howTo" class="float-end">Küçült</a></h1>
+                </div>
+                <div class="howTo">
+                    <p>1. Boşluklara tek harf girilebilir.</p>
+                    <p>2. Tahmin süresi kategoriye göre 60 veya 30 saniyedir. Doğru tahminler süreyi sıfırlar.</p>
+                    <p>3. Tahmin girildikten sonra Enter tuşuna basınız.</p>
+                    <p>4. Girilen kelime sistemde kayıtlı değilse "Geçersiz Kelime" uyarısı verilecektir.</p>
+                    <p>5. Eğer girilen harf kelime içerisinde mevcut değilse, ilgili alan gri renkte vurgulanacaktır.</p>
+                    <p>6. Eğer girilen harf kelime içerisinde mevcut fakat yeri yanlışsa, ilgili alan sarı renkte vurgulanacaktır.</p>
+                    <p>7. Eğer girilen harf kelime içerisinde mevcut ve yeri doğruysa, ilgili alan yeşil renkte vurgulanacaktır.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>          
+
+            $(document).ready(function () {
+                $(".howTo").hide();
+
+                $("#howTo").html('<i class="fas fa-search-plus text-light fs-3"></i>');
+
+                $("#howTo").click(function () {
+                    $(".howTo").toggle(500);
+
+                    if ($("#howTo i").hasClass("fa-search-plus")) {
+                        $("#howTo").html('<i class="fas fa-search-minus text-muted fs-3"></i>');
+                        // Sayfayı aşağı kaydır
+                        $('html, body').animate({
+                            scrollTop: $(".howTo").offset().top
+                        }, 500);
+                    }
+                    else {
+                        $("#howTo").html('<i class="fas fa-search-plus text-light fs-3"></i>');
+                    }
+                });
+            });
+        </script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZMGXJQRW0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-6ZMGXJQRW0');
+        </script>
+    }
+</body>
+
