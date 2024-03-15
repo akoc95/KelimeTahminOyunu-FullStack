@@ -8,7 +8,7 @@ ReportController içerisinde
 "private async Task SendEmailAsync(string emailAddress, string subject, string body)" methodunu bulup kendi SMTP ayarlarınız ile değiştirin.
 
 Views/Admin/Index içerisinde
-#<a class="text-decoration-none text-secondary" href="https://webmail.siteadi.com/" target="_blank">Web mail'e yönlendir.</a>
+# <a class="text-decoration-none text-secondary" href="https://webmail.siteadi.com/" target="_blank">Web mail'e yönlendir.</a>
 İlgili URL'yi kendi site adınıza göre değiştirin.
 
 Bitki, Canlı, Meyve, Sebze, Şehir, Ülke kategolerinde resim eklenmesi gerekmekte.
